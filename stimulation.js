@@ -1,6 +1,9 @@
 const canvas = document.getElementById('simulationCanvas');
 const ctx = canvas.getContext('2d');
 
+const angleSlider = document.getElementById('angleSlider');
+const angleValue = document.getElementById('angleValue');
+
 const WIDTH = canvas.width;
 const HEIGHT = canvas.height;
 
@@ -62,8 +65,13 @@ function simulate(angleOfIncidence) {
 function draw() {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
     drawInterface();
-    simulate(45); // Angle of incidence in degrees
+    const angle = parseInt(angleSlider.value, 10);
+    angleValue.textContent = angle;
+    simulate(angle); // Angle of incidence in degrees
 }
+
+// Event listener for slider input
+angleSlider.addEventListener('input', draw);
 
 // Initial draw
 draw();
