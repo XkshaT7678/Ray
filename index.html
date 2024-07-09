@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light Refraction and Reflection Simulation</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #000;
-        }
-        canvas {
-            border: 1px solid #fff;
-        }
-        input[type="range"] {
-            width: 300px;
-        }
-        label {
-            color: #fff;
-            margin-bottom: 10px;
-        }
-    </style>
+    <title>Ray Diagrams and Image Formation</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <label for="angleSlider">Angle of Incidence: <span id="angleValue">45</span>°</label>
-    <input type="range" id="angleSlider" min="0" max="90" value="45">
-    <canvas id="simulationCanvas" width="800" height="600"></canvas>
-    <script src="simulation.js"></script>
+    <header>
+        <h1>Ray Diagrams and Image Formation</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Learn about concave and convex mirrors and how to draw ray diagrams.</p>
+        </section>
+        <section id="interactive">
+            <h2>Interactive Diagrams</h2>
+            <div class="diagram-container">
+                <canvas id="rayDiagramCanvas" width="600" height="300"></canvas>
+                <label for="objectDistance">Object Distance:</label>
+                <input type="range" id="objectDistance" min="10" max="300" value="150">
+                <span id="objectDistanceValue">150</span> units
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
