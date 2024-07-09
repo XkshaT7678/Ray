@@ -7,6 +7,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -16,9 +17,18 @@
         canvas {
             border: 1px solid #fff;
         }
+        input[type="range"] {
+            width: 300px;
+        }
+        label {
+            color: #fff;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
+    <label for="angleSlider">Angle of Incidence: <span id="angleValue">45</span>°</label>
+    <input type="range" id="angleSlider" min="0" max="90" value="45">
     <canvas id="simulationCanvas" width="800" height="600"></canvas>
     <script src="simulation.js"></script>
 </body>
