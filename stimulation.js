@@ -52,11 +52,11 @@ function simulate(angleOfIncidence) {
     
     // Draw refracted ray
     if (n1 !== n2) {
-        drawRay(WIDTH / 2, HEIGHT / 2, -angleOfRefractionRad, 'blue');
+        drawRay(WIDTH / 2, HEIGHT / 2, Math.PI - angleOfRefractionRad, 'blue');
     }
     
     // Draw reflected ray
-    drawRay(WIDTH / 2, HEIGHT / 2, angleOfReflectionRad, 'red');
+    drawRay(WIDTH / 2, HEIGHT / 2, Math.PI - angleOfReflectionRad, 'yellow');
 }
 
 function draw() {
