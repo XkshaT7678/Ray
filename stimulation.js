@@ -41,25 +41,25 @@ function drawRay(startX, startY, angle, color) {
 function simulate(angleOfIncidence) {
     const angleOfIncidenceRad = angleOfIncidence * (Math.PI / 180);
     let angleOfRefractionRad;
-    
+
     try {
         angleOfRefractionRad = Math.asin(n1 * Math.sin(angleOfIncidenceRad) / n2);
     } catch (e) {
         angleOfRefractionRad = Math.PI / 2;
     }
-    
+
     const angleOfReflectionRad = angleOfIncidenceRad;
-    
+
     // Draw incident ray
-    drawRay(WIDTH / 2, HEIGHT / 2, angleOfIncidenceRad, 'red');
-    
+    drawRay(WIDTH / 2, HEIGHT / 2, Math.PI - angleOfIncidenceRad, 'red');
+
     // Draw refracted ray
     if (n1 !== n2) {
-        drawRay(WIDTH / 2, HEIGHT / 2, Math.PI - angleOfRefractionRad, 'blue');
+        drawRay(WIDTH / 2, HEIGHT / 2, Math.PI + angleOfRefractionRad, 'blue');
     }
-    
+
     // Draw reflected ray
-    drawRay(WIDTH / 2, HEIGHT / 2, Math.PI - angleOfReflectionRad, 'yellow');
+    drawRay(WIDTH / 2, HEIGHT / 2, Math.PI + angleOfReflectionRad, 'yellow');
 }
 
 function draw() {
